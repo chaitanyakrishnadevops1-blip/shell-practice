@@ -20,9 +20,7 @@ else
 
 
 
-
-
- dnf install mysql-server -y
+dnf install mysql-server -y
 VALIDATE $? "MYSQL"
 
 
