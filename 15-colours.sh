@@ -48,6 +48,6 @@ fi
    dnf install python-3 -y
     VALIDATE $? "python3"
      else
-   echo  -e "Nginx already exist ...$Y is SUCCESS $N"
+   echo  -e "python3 already exist ...$Y is SUCCESS $N"
 
    fi
