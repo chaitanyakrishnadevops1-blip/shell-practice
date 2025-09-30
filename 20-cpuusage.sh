@@ -10,14 +10,14 @@ do
    USAGE=$(echo $line | awk '{print $6}' | cut -d "%" -f1)
    PARTITION=$(echo $line | awk '{print $7}')
    if [ $USAGE -ge $DISK_THRESHOLD ]; then
-       MESSAGE+="High usage on $PARTITON: $USAGE % \n" # escaping
+       MESSAGE+="High Disk usage on $PARTITON: $USAGE % \n" # escaping
 
    fi
 done <<< $DISK_USAGE
 
 echo -e "Message Body: $MESSAGE"
 
-sh mail.sh "krishnasai4208@gmail.com" "High Disk Alert" "High Disk usage" "$MESSAGE" "$IP_ADDRESS" "Devops team"
+sh mail.sh "krishnasai4208@gmail.com" "High Disk Alert" "High Disk usage" "$MESSAGE" "$IP_ADDRESS" "Devops Team"
 
 # TO_ADDRESS=$1
 # SUBJECT=$2
