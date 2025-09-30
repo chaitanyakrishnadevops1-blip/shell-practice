@@ -5,12 +5,12 @@ ALERT_TYPE=$3
 MESSAGE_BODY=$4
 IP_ADDRESS=$5
 TO_TEAM=$6
-FINAL_BODY=$(sed -e "s/TO_TEAM?$TD_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e "s/IP_ADDRESS/$ALERT_TYPE/g" -e "s/MESSAGE/"$MESSAGE_BODY/g")
+FINAL_BODY=$(sed -e "s/TO_TEAM?$TO_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e "s/IP_ADDRESS/$IP_ADDRESS/g" -e "s/MESSAGE/"$MESSAGE_BODY/g")
 
 {
-echo "$To_ADDRESS:"
+echo "$To_ADDRESS"
 echo "Subject: $SUBJECT"
 echo "Content-Type: text/html"
 echo ""
 echo "$FINAL_BODY"
-} | msmtp "krishnasai4208@gmail.com"
+} | msmtp "$TO_ADDRESS"
